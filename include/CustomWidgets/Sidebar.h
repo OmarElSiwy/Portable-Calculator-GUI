@@ -1,11 +1,14 @@
 #pragma once
 
 #include <QWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QFrame>
 
 class Sidebar : public QWidget {
 	Q_OBJECT
 public:
-	explicit Sidebar(QWidget* parent = nullptr)
+	explicit Sidebar(QWidget* parent = nullptr);
 	Sidebar() = delete;
 	~Sidebar();
 

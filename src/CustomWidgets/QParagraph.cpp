@@ -4,9 +4,13 @@
 #include "CustomWidgets/QParagraph.h"
 #include <QWidget>
 #include <vector>
+#include <QLabel>
+#include <QMouseEvent>
+
+
 
 // QParagraphItem Implementation
-QParagraphItem::QParagraphItem(ItemType Type) {
+QParagraphItem::QParagraphItem(ItemType Type, QWidget *parent) : CurrType(Type), QWidget(parent) {
 	switch (Type) {
 		case Description:
 
@@ -28,21 +32,23 @@ QParagraphItem::~QParagraphItem() {
 	}
 }
 
+
+
 // QParagraphTitle Implementation
 QParagraphTitle::QParagraphTitle(const char* TitleText) {
 	// Setting up Widgets + Style
-	DropDownIcon->setPixmap();
+	DropDownIcon->setPixmap(QPixmap());
 	DropDownIcon->setContentsMargins(10, 5, 20, 5);
 
-	BookmarkIcon->setPixmap();
+	BookmarkIcon->setPixmap(QPixmap());
 	BookmarkIcon->setContentsMargins(0, 5, 10, 5);
 
-	Title->setPlainText(TitleText);
+	Title->setText(TitleText);
 	Title->setContentsMargins(0, 5, 50, 5);
 	Title->setStyleSheet();
 
 	// Setting Signals and Slots
-	connect(BookmarkIcon, $QLabel::mousePressEvent, [=](QMouseEvent* event) { // if Bookmark is clicked
+	QObject::connect(BookmarkIcon, &QLabel::mousePressEvent, [=](QMouseEvent* event) { // if Bookmark is clicked
 		if (event->button() == Qt::LeftButton) {
 			
 		}
@@ -64,15 +70,16 @@ QParagraphTitle::~QParagraphTitle() {
 }
 
 void QParagraphTitle::mousePressEvent(QMouseEvent* event) {
-	if (event->button == Qt::LeftButton) {
+	if (event->button() == Qt::LeftButton) {
 		emit [=]() { // Rotate the DropDown Icon and Deal with Parent Class
 
 		};
 	}
 }
 
+
 // QParagraph Implementation
-QParagraph::QParagraph(const char* Title, std::vector<QParagraphItem*> ParagraphItems) {
+QParagraph::QParagraph(const char* Title, std::vector<QParagraphItem*> ParagraphItems, QWidget* parent) : CurrTitle(Title), QWidget(parent) {
 	QLabel* TitleLabel(QString(Title));
 	TitleLabel->setStyleSheet();
 

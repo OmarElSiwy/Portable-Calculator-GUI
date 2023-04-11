@@ -1,4 +1,9 @@
 #include "CustomWidgets/TabTracker.h"
+#include <QPainter>
+#include <QPainterPath>
+#include <QMimeData>
+#include <QMouseEvent>
+#include <QDrag>
 
 // TabItem Implementation
 
@@ -8,14 +13,14 @@ TabItem::TabItem(QWidget* parent = nullptr) : QWidget(parent) {
 
 	item->setFixedSize(100, 50);
 
-	item->setStyleSheet("background-color: white;")
+	item->setStyleSheet("background-color: white;");
 }
 
-void TabItem::paintEvent(QPaintEvent* event) override {
+void TabItem::paintEvent(QPaintEvent* event) {
 	Q_UNUSED(event);
 	
 	QPainter painter(this);
-	painter.setrenderHint(QPainter::Antialiasing);
+	painter.setRenderHints(QPainter::Antialiasing);
 
 	QRectF rect = QRectF(0, 0, width() - 1, height() - 1);
 	painter.setPen(QPen(Qt::black, 2));
@@ -31,7 +36,7 @@ void TabItem::paintEvent(QPaintEvent* event) override {
 	painter.drawPath(path);
 }
 
-void TabItem::mousePressEvent(QMouseEvent* event) override {
+void TabItem::mousePressEvent(QMouseEvent* event) {
 	if (event->button() == Qt::LeftButton) {
 		QMimeData* mimeData = new QMimeData();
 		
@@ -42,12 +47,12 @@ void TabItem::mousePressEvent(QMouseEvent* event) override {
 	}
 }
 
-void TabItem::dragEnterEvent(QDragEnterEvent* event) override {
+void TabItem::dragEnterEvent(QDragEnterEvent* event) {
 	if (event->mimeData()->hasText())
 		event->acceptProposedAction();
 }	
 
-void TabItem::dropEvent(QDropEvent* event) override {
+void TabItem::dropEvent(QDropEvent* event) {
 
 }
 

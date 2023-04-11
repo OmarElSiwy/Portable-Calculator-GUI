@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QWidget>
+#include <QFormLayout>
 
 class Settings : public QWidget {
 	Q_OBJECT
@@ -21,5 +22,5 @@ private slots:
 public slots:
 
 private:
-
+	QFormLayout* ProgramLayout;
 };

@@ -14,9 +14,10 @@ public:
 
 	Expectations& operator=(const Expectations& obj) = delete;
 	Expectations& operator=(const Expectations&& obj) = delete;
+
+	enum ExpectationType { A, B, C, D };
 public slots:
 	void SetExpectationType(ExpectationType TargetType);
 private:
-	enum ExpectationType { A, B, C, D };
 	ExpectationType Type;
 };

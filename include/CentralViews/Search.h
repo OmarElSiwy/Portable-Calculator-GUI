@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QWidget>
+#include <QTextEdit>
 
 class Search : public QWidget {
 	Q_OBJECT
@@ -21,5 +22,5 @@ private slots:
 public slots:
 
 private:
-
+	QTextEdit* UserInput;
 };

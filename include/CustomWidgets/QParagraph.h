@@ -6,10 +6,15 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <vector>
+#include <QLabel>
+
+// QPargraphItem
 
 struct QParagraphItem : public QWidget {
 	Q_OBJECT
 public:
+	enum ItemType { Description, Picture, Code };
+
 	explicit QParagraphItem(ItemType Type, QWidget* parent = nullptr);
 	QParagraphItem() = delete;
 	~QParagraphItem();
@@ -20,14 +25,16 @@ public:
 	QParagraphItem& operator=(const QParagraphItem& other) = delete;
 	QParagraphItem& operator=(const QParagraphItem&& other) = delete;
 private:
-	enum ItemType { Description, Picture, Code };
 	ItemType CurrType;
 };
+
+// QParagraphTitle
 
 struct QParagraphTitle : public QWidget {
 	Q_OBJECT
 public:
-	QParagraphTitle(const char* Title);
+	explicit QParagraphTitle(const char* Title, QWidget *parent);
+	QParagraphTitle() = delete;
 	~QParagraphTitle();
 
 	QParagraphTitle(const QParagraphTitle& other) = delete;
@@ -37,7 +44,7 @@ public:
 	QParagraphTitle& operator=(const QParagraphTitle&& other) = delete;
 protected:
 	void mousePressEvent(QMouseEvent* event) override;
-private slot:
+private slots:
 	void RotateDropDown();
 private:
 	bool DropDownState;
@@ -45,15 +52,17 @@ private:
 
 	QLabel* DropDownIcon;
 	QLabel* Title;
-	QLabel* BookmarkIcon
+	QLabel* BookmarkIcon;
 
 	QHBoxLayout* ParagraphLayout;
 };
 
+// QPargraph
+
 class QParagraph : public QWidget {
 	Q_OBJECT
 public:
-	explicit QParagraph(const char* Title, std::vector<QParagraphItem*> ParagraphItems);
+	explicit QParagraph(const char* Title, std::vector<QParagraphItem*> ParagraphItems, QWidget* parent);
 	QParagraph() = delete;
 	~QParagraph();
 

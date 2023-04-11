@@ -6,6 +6,8 @@
 #include "CentralViews/Settings.h"
 #include "CentralViews/Search.h"
 
+enum ActiveView { AboutMe, ExpectationsA, ExpectationsB, ExpectationsC, ExpectationsD, Settings };
+
 class Views : public QWidget {
 	Q_OBJECT
 public:
@@ -19,9 +21,8 @@ public:
     Views& operator=(const Views&& Other) = delete;
 signals:
     ActiveView ViewChanged();
-private slots:
-    void ChangeView();
+public slots:
+    void ChangeView(ActiveView RequestedView);
 public:
-    enum ActiveView { AboutMe, ExpectationsA, ExpectationsB, ExpectationsC, ExpectationsD, Settings };
     ActiveView CurrView;
 };

@@ -1,4 +1,5 @@
 #include "CustomWidgets/Sidebar.h"
+#include "Views.h"
 
 Sidebar::Sidebar(QWidget* parent = nullptr) : QWidget(parent) {
 	HomeButton->setText("Home");
@@ -6,7 +7,7 @@ Sidebar::Sidebar(QWidget* parent = nullptr) : QWidget(parent) {
 	ExpectationsB->setText("ExpectationsB");
 	ExpectationsC->setText("ExpectationsC");
 	ExpectationsD->setText("ExpectationsD");
-	Search->setText("Search");
+	SearchButton->setText("Search");
 	Settings->setText("Settings");
 
 	seperator->setFrameShape(QFrame::VLine);
@@ -22,7 +23,7 @@ Sidebar::Sidebar(QWidget* parent = nullptr) : QWidget(parent) {
 	Layout->addWidget(seperator); // Curr Size is 8
 
 	// Settings Signals and Slots
-	connect(HomeButton, &QPushButton::clicked, );
+	QObject::connect(HomeButton, &QPushButton::clicked, &Views::ChangeView(AboutMe));
 	connect(ExpectationsA, &QPushButton::clicked, );
 	connect(ExpectationsB, &QPushButton::clicked, );
 	connect(ExpectationsC, &QPushButton::clicked, );

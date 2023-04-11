@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include <vector>
+#include <QLabel>
 
 struct TabItem : public QWidget {
 	Q_OBJECT
@@ -39,7 +40,6 @@ public:
 	TabTracker& operator=(const TabTracker&& other) = delete;
 private slots:
 	void OrderChanged();
-
 private:
 	std::vector<TabItem*> list;
 };
