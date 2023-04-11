@@ -1,1 +1,1 @@
-# Simple-Machines-Simulator
+# Desktop Portfolio for Computer Science Class

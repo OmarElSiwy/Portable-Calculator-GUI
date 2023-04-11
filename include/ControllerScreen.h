@@ -1,21 +1,21 @@
 #pragma once
 
 #include <QWidget>
-#include "CustomLayouts/QScreenLayout.h"
-#include "CustomLayouts/QSideBar.h"
-#include "CustomWidgets/QBarWidget.h"
-#include "CustomWidgets/QParagraph.h"
-#include "CustomWidgets/QTitle.h"
+#include "CustomLayouts/BorderLayout.h"
 
 class ControllerScreen : public QWidget {
     Q_OBJECT
 public:
-    ControllerScreen();
-    ~ControllerScreen() = default;
+    explicit ControllerScreen(QWidget* parent = nullptr);
+    ~ControllerScreen();
 
     ControllerScreen(const ControllerScreen &obj) = delete;
     ControllerScreen& operator=(const ControllerScreen &Other) = delete;
 
     ControllerScreen(const ControllerScreen &&obj) = delete;
     ControllerScreen& operator=(const ControllerScreen &&Other) = delete;
+private slots:
+    void SwitchCentralView(); // Switches the Central Widget View between Settings-About Me-Expectations Screen
+private:
+    BorderLayout* ProgramLayout;
 };
