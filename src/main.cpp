@@ -1,11 +1,13 @@
-#include "ControllerScreen.h"
-#include <QApplication>
-#include <iostream>
-#include <stdlib.h>
+#include "Include/ControlView.h"
+#include "Include/QUpdater.h"
 
-int main(int argc, char* argv[]) {
-	QApplication app(argc, argv);
-	ControllerScreen *UserScreen;
-	UserScreen->show();
-	app.exec();
+#include <QApplication>
+#include <QMainWindow>
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    QMainWindow* w = new QMainWindow();
+    w->show();
+    return app.exec();
 }
