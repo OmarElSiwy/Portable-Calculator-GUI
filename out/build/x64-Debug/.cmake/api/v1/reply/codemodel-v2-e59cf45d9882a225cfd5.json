@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MY_PROJECT",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DesktopPortfolio::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DesktopPortfolio-Debug-7440bef4d4837ad3516e.json",
+					"name" : "DesktopPortfolio",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DesktopPortfolio_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DesktopPortfolio_autogen-Debug-30c03ce417c227127ab1.json",
+					"name" : "DesktopPortfolio_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DesktopPortfolio_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DesktopPortfolio_autogen_timestamp_deps-Debug-b93ed47d7f09986b7fa7.json",
+					"name" : "DesktopPortfolio_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Sawy/Documents/DesktopPortfolio/out/build/x64-Debug",
+		"source" : "C:/Users/Sawy/Documents/DesktopPortfolio"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

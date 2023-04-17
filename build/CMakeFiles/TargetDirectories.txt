@@ -1,0 +1,4 @@
+C:/Users/Sawy/Documents/DesktopPortfolio/build/CMakeFiles/DesktopPortfolio.dir
+C:/Users/Sawy/Documents/DesktopPortfolio/build/CMakeFiles/edit_cache.dir
+C:/Users/Sawy/Documents/DesktopPortfolio/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Sawy/Documents/DesktopPortfolio/build/CMakeFiles/DesktopPortfolio_autogen.dir

@@ -1,0 +1,5 @@
+C:/Users/Sawy/Documents/DesktopPortfolio/out/build/x64-Debug/CMakeFiles/DesktopPortfolio.dir
+C:/Users/Sawy/Documents/DesktopPortfolio/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Sawy/Documents/DesktopPortfolio/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Sawy/Documents/DesktopPortfolio/out/build/x64-Debug/CMakeFiles/DesktopPortfolio_autogen_timestamp_deps.dir
+C:/Users/Sawy/Documents/DesktopPortfolio/out/build/x64-Debug/CMakeFiles/DesktopPortfolio_autogen.dir
